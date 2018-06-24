@@ -1,0 +1,35 @@
+omponentWillReceiveProps(newProps) {
+    console.log(
+        `我新的props的name是${newProps.name}，age是${
+            newProps.age
+        }。我以前的props的name是${this.props.name}，age是${
+            this.props.age
+        }是我要re-render了`
+    )
+}
+
+这个函数就没有任何作用，因为每一个Person对应的name和age都是固定在数组之中的，所以就不会改变，所以也不会有新的props传入，传入的只是之前相同name和age！
+
+
+但是的确有重复渲染的问题，所以可以有：
+shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.name === this.props.name && nextProps.age === this.props.age) {
+        console.log('the result are the same!!!')
+        console.log('shouldComponentUpdate -> false')
+        return false
+    }
+    console.log('NOT same!!!')
+    console.log('shouldComponentUpdate -> true')
+    return true
+}
+这个函数，让父组件App更新的时候，子组件Person不会重新进行渲染！
+
+
+
+
+
+
+
+
+
+
