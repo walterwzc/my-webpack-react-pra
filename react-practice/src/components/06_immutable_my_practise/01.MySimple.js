@@ -1,42 +1,44 @@
 import React, { Component } from 'react'
 
-import { Map as ImmuMap, List as ImmuList } from 'immutable'
+import { List, Map } from 'immutable'
 
 class ImmutableComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            immuStore: ImmuMap({ count: 0, savedList: ImmuList([]) })
+            immuStore: Map({count: 0, list: List([])})
         }
     }
     handleAddCount = () => {
+        console.log(this.state.immuStore)
         this.setState(({immuStore}) => ({
             immuStore: immuStore.update('count', value => value + 1)
         }))
     }
-    handleSaveCountToList = () => {
+    handleSaveCount = () => {
         this.setState(({immuStore}) => ({
-            immuStore: immuStore.update('savedList', list => list.push(immuStore.get('count')))
+            immuStore: immuStore.update('list', list => list.push(this.state.immuStore.get('count')))
         }))
     }
     genUuid() {
         return Math.random()
-                .toString(34)
+                .toString()
                 .slice(2)
     }
     render() {
         const immuStore = this.state.immuStore
-        console.log(immuStore)
         return (
             <div>
-                <button onClick={this.handleAddCount}>Count增加</button>
-                <button onClick={this.handleSaveCountToList}>保存Count</button>
-                Count的值是：{immuStore.get('count')}<br/>
-                ImmuList:
+                <button onClick={this.handleAddCount}>Add Count</button>
+                <button onClick={this.handleSaveCount}>Save Count</button>
+                <div>The Count is: {immuStore.get('count')}</div>
+                The Saved Count List is:
                 <ul>
-                    {immuStore.get('savedList').map(item => {
-                        return <li key={this.genUuid()}>{item}</li>
-                    })}
+                    {
+                        immuStore.get('list').map((item, index) => {
+                            return <li key={this.genUuid()}>{item}</li>
+                        })
+                    }
                 </ul>
             </div>
         )
