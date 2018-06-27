@@ -1,0 +1,9 @@
+html, body {
+    background: rgb(228, 37, 37)
+}
+
+.container {
+    width: 600px;
+    margin: 60px auto;
+    background: rgb(80, 223, 241)
+}

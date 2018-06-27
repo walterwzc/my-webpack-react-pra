@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import PostList from './PostList'
+import './Posts.css'
 
 class Posts extends Component {
     static contextTypes = {
@@ -39,7 +40,7 @@ class Posts extends Component {
         console.log('Posts -> render')
         console.log(this.store.getState())
         return (
-            <div>
+            <div className="container">
                 <div>
                     <input
                         type="text"

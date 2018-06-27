@@ -3,8 +3,10 @@ export default (state = [], action) => {
     console.log(action)
     switch (action.type) {
         case 'ADD':
-            return [...state, ...action.payload]
+            console.log('case ADD')
+            return [...state, action.payload]
         case 'DELETE':
+            console.log('case DELETE')
             return state.payload.filter((item) => {
                 return item.id !== action.id
             })
