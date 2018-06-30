@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom'
 // 样式：
 // import './styles/app.scss'
 
-// import './components/07_redux/04-immutable-redux-todo-list/styles/style.css'
-
 // import App from './components/01.css_module';
 
 // import App from './components/02.children';
@@ -24,8 +22,9 @@ import ReactDOM from 'react-dom'
 
 // import App from './components/07_redux/03react-redux-todo-list/App'
 
-import App from './components/07_redux/04-immutable-redux-todo-list/index'
+// import App from './components/07_redux/04-immutable-redux-todo-list/index'
 
+import App from './components/07_redux/03-2-immutable-redux-todo-list-refactor/index'
 
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
@@ -34,7 +33,12 @@ import thunk from 'redux-thunk'
 // reducer from 07-03
 // import reducer from './components/07_redux/03react-redux-todo-list/store/reducer'
 
-import reducer from './components/07_redux/04-immutable-redux-todo-list/reducer'
+// REDUCER FROM 07-03-2
+import reducer from './components/07_redux/03-2-immutable-redux-todo-list-refactor/reducer'
+
+
+// reducer from 07-04
+// import reducer from './components/07_redux/04-immutable-redux-todo-list/reducer'
 
 const store = createStore(reducer, applyMiddleware(thunk))
 

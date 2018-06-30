@@ -1,20 +1,21 @@
 import { connect } from 'react-redux'
 
+import { addTodo, deleteTodo, toggleTodo } from './actions'
 import * as components from './components'
-import { addTodo, toggleTodo } from './actions'
 
 import './styles/style.css'
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
     return {
         todos: state
     }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
     return {
         addTodo: text => dispatch(addTodo(text)),
-        toggleTodo: id => dispatch(toggleTodo(id))
+        toggleTodo: id => dispatch(toggleTodo(id)),
+        deleteTodo: id => dispatch(deleteTodo(id))
     }
 }
 

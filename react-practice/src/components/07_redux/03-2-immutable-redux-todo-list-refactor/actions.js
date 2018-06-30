@@ -1,10 +1,10 @@
-function genUuid() {
+function genUuid () {
     return Math.random()
             .toString(34)
-            .slice(2)
+            .slice(3)
 }
 
-export function addTodo(text) {
+export function addTodo (text) {
     return {
         type: 'ADD_TODO',
         payload: {
@@ -15,9 +15,16 @@ export function addTodo(text) {
     }
 }
 
-export function toggleTodo(id) {
+export function toggleTodo (id) {
     return {
         type: 'TOGGLE_TODO',
+        payload: id
+    }
+}
+
+export function deleteTodo (id) {
+    return {
+        type: 'DELETE_TODO',
         payload: id
     }
 }

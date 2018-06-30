@@ -5,5 +5,5 @@ ul, li, ol {
 .container {
     width: 600px;
     margin: 60px auto;
-    background: rgb(80, 223, 241)
+    /* background: rgb(80, 223, 241) */
 }
