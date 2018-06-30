@@ -20,8 +20,8 @@ class Posts extends Component {
     }
     genUuid = () => {
         return Math.random()
-                    .toString(34)
-                    .slice(2)
+            .toString(34)
+            .slice(2)
     }
     commentInputChange = e => {
         console.log('commentInputChange')
@@ -33,12 +33,15 @@ class Posts extends Component {
         console.log('addComment')
         this.store.dispatch({
             type: 'ADD',
-            payload: {id: this.genUuid(), comment: this.state.commentInput}
+            payload: { id: this.genUuid(), comment: this.state.commentInput },
+            status: true
+        })
+        this.setState({
+            commentInput: ''
         })
     }
     render() {
         console.log('Posts -> render')
-        console.log(this.store.getState())
         return (
             <div className="container">
                 <div>
@@ -47,12 +50,14 @@ class Posts extends Component {
                         value={this.state.commentInput}
                         onChange={this.commentInputChange}
                     />
-                    <button 
+                    <button
                         onClick={this.addComment}
-                        style={{width: 60, height: 25, marginLeft: 10}}
-                    >增加</button>
+                        style={{ width: 60, height: 25, marginLeft: 10 }}
+                    >
+                        增加
+                    </button>
                 </div>
-                <PostList list={this.store.getState()}/>
+                <PostList list={this.store.getState()} />
             </div>
         )
     }

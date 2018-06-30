@@ -2,12 +2,15 @@ import React from 'react'
 
 import buttonStyle from '../styles/button.scss'
 
+// import '../styles/button.scss'
+
 function Button(props) {
     console.log(props.className)
     console.log(buttonStyle)
     return (
         <div>
             <button className={buttonStyle[props.className]}>{props.text}</button>
+            {/* <button className={props.className}>{props.text}</button> */}
         </div>
     )
 }

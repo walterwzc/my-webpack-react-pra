@@ -9,7 +9,7 @@ class App extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{width:600, marginLeft: 'auto', marginRight: 'auto'}}>
                 <h3>To do List:</h3>
                 <Posts />
             </div>

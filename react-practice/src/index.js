@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import './styles/app.scss'
+// 样式：
+// import './styles/app.scss'
+
+// import './components/07_redux/04-immutable-redux-todo-list/styles/style.css'
 
 // import App from './components/01.css_module';
 
@@ -19,14 +22,21 @@ import './styles/app.scss'
 
 // import App from './components/07_redux/02middleware/App'
 
-import App from './components/07_redux/03react-redux-todo-list/App'
+// import App from './components/07_redux/03react-redux-todo-list/App'
+
+import App from './components/07_redux/04-immutable-redux-todo-list/index'
 
 
 import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 
-import { createStore } from 'redux'
-import reducer from './components/07_redux/03react-redux-todo-list/store/reducer'
-const store = createStore(reducer)
+// reducer from 07-03
+// import reducer from './components/07_redux/03react-redux-todo-list/store/reducer'
+
+import reducer from './components/07_redux/04-immutable-redux-todo-list/reducer'
+
+const store = createStore(reducer, applyMiddleware(thunk))
 
 const el = document.getElementById('app')
 
