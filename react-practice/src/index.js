@@ -20,7 +20,7 @@ import ReactDOM from 'react-dom'
 
 // import App from './components/07_redux/02middleware/App'
 
-// import App from './components/07_redux/03react-redux-todo-list/App'
+// import App from './components/07_redux/03-1-react-redux-todo-list/App'
 
 // import App from './components/07_redux/04-immutable-redux-todo-list/index'
 
@@ -30,8 +30,8 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
-// reducer from 07-03
-// import reducer from './components/07_redux/03react-redux-todo-list/store/reducer'
+// reducer from 07-03-1
+// import reducer from './components/07_redux/03-1-react-redux-todo-list/store/reducer'
 
 // REDUCER FROM 07-03-2
 import reducer from './components/07_redux/03-2-immutable-redux-todo-list-refactor/reducer'
